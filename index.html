@@ -180,7 +180,7 @@
 
         document.getElementById('balance').textContent = `₿ ${formatSats(balanceSats)} SATS ahorrados 🤩`;
 
-        const coingecko = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=cop');
+        const coingecko = await fetch('https://api.yadio.io/exrates/BTC/COP');
         const priceData = await coingecko.json();
         const btcToCop = priceData.bitcoin.cop;
         const copValue = (balanceSats / 100_000_000) * btcToCop;
