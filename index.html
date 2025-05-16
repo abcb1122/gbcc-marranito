@@ -132,8 +132,8 @@
     </div>
 
     <div class="text-center mt-4">
-      <p id="balance" class="text-2xl font-semibold text-gray-800">Cargando saldo...</p>
-      <p id="cop-balance" class="text-lg text-gray-600">Cargando conversión...</p>
+      <p id="balance" class="text-2xl font-semibold text-gray-800 font-sniglet">Cargando saldo...</p>
+      <p id="cop-balance" class="text-lg text-gray-600 font-sniglet">Cargando conversión...</p>
       <p class="text-md text-gray-500 mt-2">¡Envía sats y ayuda a llenar el marranito!</p>
     </div>
 
@@ -178,7 +178,7 @@
         console.log('Datos del worker:', data);
         const balanceSats = data.balance;
 
-        document.getElementById('balance').textContent = `₿ ${formatSats(balanceSats)} sats ahorrados 🤩`;
+        document.getElementById('balance').textContent = `₿ ${formatSats(balanceSats)} SATS ahorrados 🤩`;
 
         const coingecko = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=cop');
         const priceData = await coingecko.json();
