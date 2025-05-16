@@ -72,21 +72,21 @@
     @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
     /* Estilos para las nubes animadas */
     .image-container { position: relative; width: 24rem; height: 24rem; }
-    .cloud-1 { position: absolute; top: 5%; left: 5%; animation: moveCloud 10s linear infinite; animation-delay: 0s; }
-    .cloud-2 { position: absolute; top: 20%; left: 5%; animation: moveCloud 12s linear infinite; animation-delay: 2s; z-index: 5; }
-    .cloud-3 { position: absolute; top: 35%; left: 5%; animation: moveCloud 14s linear infinite; animation-delay: 4s; }
-    .cloud-4 { position: absolute; top: 50%; left: 5%; animation: moveCloud 16s linear infinite; animation-delay: 6s; z-index: 5; }
-    .cloud-5 { position: absolute; top: 65%; left: 5%; animation: moveCloud 18s linear infinite; animation-delay: 8s; }
-    .cloud-6 { position: absolute; top: 80%; left: 5%; animation: moveCloud 20s linear infinite; animation-delay: 10s; }
-    .cloud-7 { position: absolute; top: 12.5%; right: 5%; animation: moveCloud 11s linear infinite; animation-delay: 1s; }
-    .cloud-8 { position: absolute; top: 42.5%; right: 5%; animation: moveCloud 15s linear infinite; animation-delay: 5s; z-index: 5; }
+    .cloud-1 { position: absolute; top: 5%; left: -200px; animation: moveCloud 10s linear infinite; animation-delay: 4.5s; }
+    .cloud-2 { position: absolute; top: 20%; left: -200px; animation: moveCloud 12s linear infinite; animation-delay: 0s; z-index: 5; }
+    .cloud-3 { position: absolute; top: 35%; left: -200px; animation: moveCloud 14s linear infinite; animation-delay: 9s; }
+    .cloud-4 { position: absolute; top: 50%; left: -200px; animation: moveCloud 16s linear infinite; animation-delay: 1.5s; z-index: 5; }
+    .cloud-5 { position: absolute; top: 65%; left: -200px; animation: moveCloud 18s linear infinite; animation-delay: 6s; }
+    .cloud-6 { position: absolute; top: 80%; left: -200px; animation: moveCloud 20s linear infinite; animation-delay: 3s; }
+    .cloud-7 { position: absolute; top: 12.5%; left: -200px; animation: moveCloud 11s linear infinite; animation-delay: 10.5s; }
+    .cloud-8 { position: absolute; top: 42.5%; left: -200px; animation: moveCloud 15s linear infinite; animation-delay: 7.5s; z-index: 5; }
     .cloud-size-1 { width: 4rem; height: 2rem; }
     .cloud-size-2 { width: 5rem; height: 2.5rem; }
     .cloud-size-3 { width: 3rem; height: 1.5rem; }
     .z-10 { z-index: 10; }
     @keyframes moveCloud {
-      0% { left: -150px; }
-      100% { left: calc(100% + 150px); }
+      0% { left: -200px; }
+      100% { left: calc(100% + 200px); }
     }
     @media (min-width: 768px) {
       .md\:text-5xl { font-size: 3rem; line-height: 1; }
