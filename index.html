@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Marranito de GBCC</title>
+  <style>
+    /* Tailwind CSS precompilado (subset para esta página) */
+    .bg-gradient-to-b { background-image: linear-gradient(to bottom, var(--tw-gradient-stops)); }
+    .from-blue-100 { --tw-gradient-from: #dbeafe; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(219, 234, 254, 0)); }
+    .to-pink-100 { --tw-gradient-to: #fce7f3; }
+    .min-h-screen { min-height: 100vh; }
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .items-center { align-items: center; }
+    .justify-center { justify-content: center; }
+    .font-sans { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; }
+    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    .text-center { text-align: center; }
+    .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+    .md\:text-5xl { font-size: 3rem; line-height: 1; }
+    .font-bold { font-weight: 700; }
+    .text-blue-600 { color: #2563eb; }
+    .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+    .md\:text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+    .text-gray-700 { color: #4b5563; }
+    .mt-2 { margin-top: 0.5rem; }
+    .relative { position: relative; }
+    .w-64 { width: 16rem; }
+    .h-64 { height: 16rem; }
+    .w-full { width: 100%; }
+    .h-full { height: 100%; }
+    .absolute { position: absolute; }
+    .top-0 { top: 0; }
+    .left-0 { left: 0; }
+    .right-0 { right: 0; }
+    .mt-4 { margin-top: 1rem; }
+    .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+    .font-semibold { font-weight: 600; }
+    .text-gray-800 { color: #1f2937; }
+    .text-gray-600 { color: #4b5563; }
+    .text-md { font-size: 1rem; line-height: 1.5rem; }
+    .text-gray-500 { color: #6b7280; }
+    .mt-6 { margin-top: 1.5rem; }
+    .text-orange-500 { color: #f97316; }
+    .mt-12 { margin-top: 3rem; }
+    .max-w-2xl { max-width: 42rem; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .rounded-lg { border-radius: 0.5rem; }
+    .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+    .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+    .w-8 { width: 2rem; }
+    .h-8 { height: 2rem; }
+    .object-contain { object-fit: contain; }
+    .w-80 { width: 20rem; } /* Ajustado para bitcoin-ninos.jpg */
+    .h-40 { height: 10rem; } /* Ajustado para bitcoin-ninos.jpg */
+    .animate-float { animation: float 1.5s ease-in-out infinite; }
+    .animate-float-delay { animation: float 1.5s ease-in-out infinite 0.5s; }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    @media (min-width: 768px) {
+      .md\:text-5xl { font-size: 3rem; line-height: 1; }
+      .md\:text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="bg-gradient-to-b from-blue-100 to-pink-100 min-h-screen flex flex-col items-center justify-center font-sans">
+  <!-- Header -->
+  <header class="text-center py-8">
+    <h1 class="text-4xl md:text-5xl font-bold text-blue-600">El Marranito de GBCC</h1>
+    <p class="text-lg md:text-xl text-gray-700 mt-2">¡Ayuda a GBCC a ahorrar sats en su alcancía virtual!</p>
+  </header>
+
+  <!-- Main Piggy Bank Section -->
+  <section class="flex flex-col items-center">
+    <!-- Piggy Bank Image -->
+    <div class="relative w-64 h-64">
+      <img src="https://raw.githubusercontent.com/tu-usuario/gbcc-marranito/main/assets/images/marranito.png" alt="Marranito" class="w-full h-full object-contain">
+      <!-- Floating Bitcoin Icons -->
+      <img src="https://raw.githubusercontent.com/tu-usuario/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-0 left-0 w-8 h-8 object-contain animate-float" alt="BTC">
+      <img src="https://raw.githubusercontent.com/tu-usuario/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-0 right-0 w-8 h-8 object-contain animate-float-delay" alt="BTC">
+    </div>
+
+    <!-- Balance Display -->
+    <div class="text-center mt-4">
+      <p id="balance" class="text-2xl font-semibold text-gray-800">Cargando saldo...</p>
+      <p id="cop-balance" class="text-lg text-gray-600">Cargando conversión...</p>
+      <p class="text-md text-gray-500 mt-2">¡Gracias por ayudar a llenar su alcancía!</p>
+    </div>
+
+    <!-- Lightning Address -->
+    <p class="mt-6 text-lg font-semibold text-orange-500">
+      Envía sats a: <strong>marranito@pay.abcbbtc.com</strong>
+    </p>
+  </section>
+
+  <!-- Educational Section -->
+  <section class="mt-12 max-w-2xl text-center">
+    <h2 class="text-2xl font-bold text-blue-600">¿Qué es Bitcoin?</h2>
+    <p class="text-lg text-gray-700 mt-4">
+      ¡Bitcoin es como dinero mágico que vive en internet! Puedes usarlo para comprar cosas, y en el marranito de GBCC, guardamos pedacitos pequeños llamados <strong>sats</strong>. ¡Es como juntar monedas para un tesoro!
+    </p>
+    <img src="https://raw.githubusercontent.com/tu-usuario/gbcc-marranito/main/assets/images/bitcoin-ninos.jpg" alt="Bitcoin para niños" class="mt-4 mx-auto w-80 h-40 object-contain rounded-lg">
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-12 py-4 text-center text-gray-600">
+    <p>Creado por papá ❤️ con Bitcoin</p>
+    <p class="text-sm mt-2">gbcc.abcbbtc.com</p>
+  </footer>
+
+  <script>
+    // Formato de números con separador de miles
+    function formatSats(sats) {
+      return sats.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
+    function formatCOP(cop) {
+      return '$' + Math.floor(cop).toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    }
+
+    // Simulación de consulta de saldo (reemplazar con API real de LNURLP/LNBits)
+    async function fetchBalance() {
+      // Placeholder: Suponemos que LNURLP devuelve el saldo en sats
+      const balanceSats = 5000; // Reemplazar con llamada a API real
+      document.getElementById('balance').textContent = `GBCC ha ahorrado ${formatSats(balanceSats)} sats`;
+
+      // Obtener tasa BTC-COP desde CoinGecko
+      try {
+        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=cop');
+        const data = await response.json();
+        const btcToCop = data.bitcoin.cop;
+        const copValue = (balanceSats / 100_000_000) * btcToCop;
+        document.getElementById('cop-balance').textContent = `Eso equivale a ${formatCOP(copValue)} pesos colombianos`;
+      } catch (error) {
+        document.getElementById('cop-balance').textContent = 'Error al cargar conversión';
+      }
+    }
+
+    // Animación de moneda al recibir donación (simulada)
+    function animateCoin() {
+      const coin = document.createElement('img');
+      coin.src = 'https://raw.githubusercontent.com/tu-usuario/gbcc-marranito/main/assets/images/bitcoin-icon.png';
+      coin.className = 'absolute top-0 left-1/2 w-8 h-8 object-contain';
+      document.querySelector('.relative').appendChild(coin);
+      gsap.to(coin, {
+        y: 200,
+        x: 0,
+        opacity: 0,
+        duration: 1,
+        ease: 'power2.in',
+        onComplete: () => coin.remove()
+      });
+    }
+
+    // Animación flotante para íconos de Bitcoin
+    gsap.to('.animate-float', { y: -20, repeat: -1, yoyo: true, ease: 'sine.inOut', duration: 1.5 });
+    gsap.to('.animate-float-delay', { y: -20, repeat: -1, yoyo: true, ease: 'sine.inOut', duration: 1.5, delay: 0.5 });
+
+    // Consulta inicial del saldo
+    fetchBalance();
+
+    // Simular animación de donación cada 10s (reemplazar con webhook real)
+    setInterval(animateCoin, 10000);
+  </script>
+</body>
+</html>
