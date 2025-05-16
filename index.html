@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>El Marranito Virtual</title>
+  <title>Marranito Virtual</title>
   <style>
     /* Tailwind CSS precompilado (subset para esta página) */
     .bg-gradient-to-b { background-image: linear-gradient(to bottom, var(--tw-gradient-stops)); }
@@ -52,8 +52,8 @@
     .w-8 { width: 2rem; }
     .h-8 { height: 2rem; }
     .object-contain { object-fit: contain; }
-    .w-80 { width: 20rem; } /* Ajustado para bitcoin-ninos.png */
-    .h-40 { height: 10rem; } /* Ajustado para bitcoin-ninos.png */
+    .w-80 { width: 20rem; }
+    .h-40 { height: 10rem; }
     .animate-float { animation: float 1.5s ease-in-out infinite; }
     .animate-float-delay { animation: float 1.5s ease-in-out infinite 0.5s; }
     @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
@@ -98,13 +98,14 @@
   <section class="mt-12 max-w-2xl text-center">
     <h2 class="text-2xl font-bold text-blue-600">¿Qué es Bitcoin?</h2>
     <p class="text-lg text-gray-700 mt-4">
-      ¡Bitcoin es como dinero mágico que vive en internet! Puedes usarlo para comprar cosas, y en el marranito del Chiqui 👦🏻, guardamos pedacitos pequeños llamados <strong>sats</strong>. ¡Es como juntar monedas para un tesoro!
+      ¡Dinero mágico que vive en internet! Puedes usarlo para comprar cosas, y en el marranito del Chiqui 👦🏻, guardamos pedacitos pequeños llamados <strong>sats</strong>. ¡Es como juntar monedas para un tesoro!
     </p>
     <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-ninos.png" alt="Bitcoin para niños" class="mt-4 mx-auto w-80 h-40 object-contain rounded-lg">
   </section>
 
   <!-- Footer -->
   <footer class="mt-12 py-4 text-center text-gray-600">
+    <p>🐖</p>
     <p>Creado con ❤️ por papá y Satoshi Nakamoto</p>
     <p class="text-sm mt-2">marranito.abcbbtc.com</p>
   </footer>
@@ -123,7 +124,7 @@
     async function fetchBalance() {
       // Placeholder: Suponemos que LNURLP devuelve el saldo en sats
       const balanceSats = 5000; // Reemplazar con llamada a API real
-      document.getElementById('balance').textContent = `Chiqui 👦🏻 tiene ${formatSats(balanceSats)} sats ahorrados`;
+      document.getElementById('balance').textContent = `₿ ${formatSats(balanceSats)} sats ahorrados 🤩`;
 
       // Obtener tasa BTC-COP desde CoinGecko
       try {
@@ -131,7 +132,7 @@
         const data = await response.json();
         const btcToCop = data.bitcoin.cop;
         const copValue = (balanceSats / 100_000_000) * btcToCop;
-        document.getElementById('cop-balance').textContent = `Lo equivalente a ${formatCOP(copValue)} COP`;
+        document.getElementById('cop-balance').textContent = `+/- ${formatCOP(copValue)} COP 🤮`;
       } catch (error) {
         document.getElementById('cop-balance').textContent = 'Error al cargar conversión';
       }
