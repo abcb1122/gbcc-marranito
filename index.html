@@ -52,8 +52,8 @@
     .w-8 { width: 2rem; }
     .h-8 { height: 2rem; }
     .object-contain { object-fit: contain; }
-    .w-80 { width: 20rem; } /* Ajustado para bitcoin-ninos.jpg */
-    .h-40 { height: 10rem; } /* Ajustado para bitcoin-ninos.jpg */
+    .w-80 { width: 20rem; } /* Ajustado para bitcoin-ninos.png */
+    .h-40 { height: 10rem; } /* Ajustado para bitcoin-ninos.png */
     .animate-float { animation: float 1.5s ease-in-out infinite; }
     .animate-float-delay { animation: float 1.5s ease-in-out infinite 0.5s; }
     @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
@@ -75,10 +75,10 @@
   <section class="flex flex-col items-center">
     <!-- Piggy Bank Image -->
     <div class="relative w-64 h-64">
-      <img src="https://raw.githubusercontent.com/tu-usuario/gbcc-marranito/main/assets/images/marranito.png" alt="Marranito" class="w-full h-full object-contain">
+      <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/marranito.png" alt="Marranito" class="w-full h-full object-contain">
       <!-- Floating Bitcoin Icons -->
-      <img src="https://raw.githubusercontent.com/tu-usuario/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-0 left-0 w-8 h-8 object-contain animate-float" alt="BTC">
-      <img src="https://raw.githubusercontent.com/tu-usuario/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-0 right-0 w-8 h-8 object-contain animate-float-delay" alt="BTC">
+      <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-0 left-0 w-8 h-8 object-contain animate-float" alt="BTC">
+      <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-0 right-0 w-8 h-8 object-contain animate-float-delay" alt="BTC">
     </div>
 
     <!-- Balance Display -->
@@ -100,7 +100,7 @@
     <p class="text-lg text-gray-700 mt-4">
       ¡Bitcoin es como dinero mágico que vive en internet! Puedes usarlo para comprar cosas, y en el marranito de GBCC, guardamos pedacitos pequeños llamados <strong>sats</strong>. ¡Es como juntar monedas para un tesoro!
     </p>
-    <img src="https://raw.githubusercontent.com/tu-usuario/gbcc-marranito/main/assets/images/bitcoin-ninos.jpg" alt="Bitcoin para niños" class="mt-4 mx-auto w-80 h-40 object-contain rounded-lg">
+    <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-ninos.png" alt="Bitcoin para niños" class="mt-4 mx-auto w-80 h-40 object-contain rounded-lg">
   </section>
 
   <!-- Footer -->
@@ -140,7 +140,7 @@
     // Animación de moneda al recibir donación (simulada)
     function animateCoin() {
       const coin = document.createElement('img');
-      coin.src = 'https://raw.githubusercontent.com/tu-usuario/gbcc-marranito/main/assets/images/bitcoin-icon.png';
+      coin.src = 'https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png';
       coin.className = 'absolute top-0 left-1/2 w-8 h-8 object-contain';
       document.querySelector('.relative').appendChild(coin);
       gsap.to(coin, {
