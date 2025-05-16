@@ -34,6 +34,9 @@
     .top-0 { top: 0; }
     .left-0 { left: 0; }
     .right-0 { right: 0; }
+    .top-1\/2 { top: 50%; transform: translateY(-50%); }
+    .left-1\/2 { left: 50%; transform: translateX(-50%); }
+    .bottom-0 { bottom: 0; }
     .mt-4 { margin-top: 1rem; }
     .text-2xl { font-size: 1.5rem; line-height: 2rem; }
     .font-semibold { font-weight: 600; }
@@ -54,8 +57,13 @@
     .object-contain { object-fit: contain; }
     .w-80 { width: 20rem; }
     .h-40 { height: 10rem; }
+    .w-36 { width: 9rem; } /* Para el código QR */
+    .h-36 { height: 9rem; } /* Para el código QR */
     .animate-float { animation: float 1.5s ease-in-out infinite; }
-    .animate-float-delay { animation: float 1.5s ease-in-out infinite 0.5s; }
+    .animate-float-delay-1 { animation: float 1.5s ease-in-out infinite 0.3s; }
+    .animate-float-delay-2 { animation: float 1.5s ease-in-out infinite 0.6s; }
+    .animate-float-delay-3 { animation: float 1.5s ease-in-out infinite 0.9s; }
+    .animate-float-delay-4 { animation: float 1.5s ease-in-out infinite 1.2s; }
     @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
     @media (min-width: 768px) {
       .md\:text-5xl { font-size: 3rem; line-height: 1; }
@@ -79,7 +87,10 @@
       <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/marranito.png" alt="Marranito" class="w-full h-full object-contain">
       <!-- Floating Bitcoin Icons -->
       <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-0 left-0 w-8 h-8 object-contain animate-float" alt="BTC">
-      <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-0 right-0 w-8 h-8 object-contain animate-float-delay" alt="BTC">
+      <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-0 right-0 w-8 h-8 object-contain animate-float-delay-1" alt="BTC">
+      <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-1/2 left-0 w-8 h-8 object-contain animate-float-delay-2" alt="BTC">
+      <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-1/2 right-0 w-8 h-8 object-contain animate-float-delay-3" alt="BTC">
+      <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute bottom-0 left-1/2 w-8 h-8 object-contain animate-float-delay-4" alt="BTC">
     </div>
 
     <!-- Balance Display -->
@@ -93,6 +104,11 @@
     <p class="mt-6 text-lg font-semibold text-orange-500">
       Usa la LNAddress: <strong>marranito@pay.abcbbtc.com</strong>
     </p>
+    <p class="mt-6 text-lg font-semibold text-orange-500">
+      o escanea el código QR con tu wallet de Lightning Network
+    </p>
+    <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/qrmarranito.png" alt="Código QR para LNURL" class="mt-4 mx-auto w-36 h-36 object-contain">
+
   </section>
 
   <!-- Educational Section -->
@@ -157,7 +173,10 @@
 
     // Animación flotante para íconos de Bitcoin
     gsap.to('.animate-float', { y: -20, repeat: -1, yoyo: true, ease: 'sine.inOut', duration: 1.5 });
-    gsap.to('.animate-float-delay', { y: -20, repeat: -1, yoyo: true, ease: 'sine.inOut', duration: 1.5, delay: 0.5 });
+    gsap.to('.animate-float-delay-1', { y: -20, repeat: -1, yoyo: true, ease: 'sine.inOut', duration: 1.5, delay: 0.3 });
+    gsap.to('.animate-float-delay-2', { y: -20, repeat: -1, yoyo: true, ease: 'sine.inOut', duration: 1.5, delay: 0.6 });
+    gsap.to('.animate-float-delay-3', { y: -20, repeat: -1, yoyo: true, ease: 'sine.inOut', duration: 1.5, delay: 0.9 });
+    gsap.to('.animate-float-delay-4', { y: -20, repeat: -1, yoyo: true, ease: 'sine.inOut', duration: 1.5, delay: 1.2 });
 
     // Consulta inicial del saldo
     fetchBalance();
