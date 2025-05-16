@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>🐖Marranito Virtual</title>
+  <!-- Importar Google Fonts solo para Fredoka One -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
   <style>
     .bg-gradient-to-b { background-image: linear-gradient(to bottom, var(--tw-gradient-stops)); }
     .from-blue-100 { --tw-gradient-from: #dbeafe; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(219, 234, 254, 0)); }
@@ -13,8 +15,8 @@
     .flex-col { flex-direction: column; }
     .items-center { align-items: center; }
     .justify-center { justify-content: center; }
-    .font-sans { font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif; }
-    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    .font-fredoka { font-family: 'Fredoka One', cursive; }
+    .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
     .text-center { text-align: center; }
     .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
     .md\:text-5xl { font-size: 3rem; line-height: 1; }
@@ -27,6 +29,8 @@
     .relative { position: relative; }
     .w-64 { width: 16rem; }
     .h-64 { height: 16rem; }
+    .w-96 { width: 24rem; }
+    .h-96 { height: 24rem; }
     .w-full { width: 100%; }
     .h-full { height: 100%; }
     .absolute { position: absolute; }
@@ -64,7 +68,16 @@
     .animate-float-delay-2 { animation: float 1.5s ease-in-out infinite 0.6s; }
     .animate-float-delay-3 { animation: float 1.5s ease-in-out infinite 0.9s; }
     .animate-float-delay-4 { animation: float 1.5s ease-in-out infinite 1.2s; }
+    .mt-\[-1rem\] { margin-top: -1rem; }
     @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+    /* Estilos para las nubes estáticas */
+    .image-container { position: relative; width: 24rem; height: 24rem; }
+    .cloud-1 { position: absolute; top: 5%; left: 5%; }
+    .cloud-2 { position: absolute; top: 20%; left: 5%; }
+    .cloud-3 { position: absolute; top: 35%; left: 5%; }
+    .cloud-size-1 { width: 4rem; height: 2rem; }
+    .cloud-size-2 { width: 5rem; height: 2.5rem; }
+    .cloud-size-3 { width: 3rem; height: 1.5rem; }
     @media (min-width: 768px) {
       .md\:text-5xl { font-size: 3rem; line-height: 1; }
       .md\:text-xl { font-size: 1.25rem; line-height: 1.75rem; }
@@ -72,13 +85,23 @@
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-<body class="bg-gradient-to-b from-blue-100 to-pink-100 min-h-screen flex flex-col items-center justify-center font-sans px-6">
-  <header class="text-center py-8">
-    <h1 class="text-4xl md:text-5xl font-bold text-blue-600">Marranito Virtual</h1>
-    <h1 class="text-4xl md:text-5xl font-bold text-blue-600">🐖</h1>
-    <p class="text-lg md:text-xl text-gray-700 mt-2">¡Ayuda al Chiqui 👦🏻 a ahorrar sats en su alcancía virtual!</p>
+<body class="bg-gradient-to-b from-blue-100 to-pink-100 min-h-screen flex flex-col items-center justify-center font-fredoka px-6">
+  <!-- Header -->
+  <header class="text-center py-4">
+    <div class="image-container mx-auto">
+      <!-- Imagen principal del marranito -->
+      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/marranitoinicio.png" alt="Marranito Inicio" class="w-96 h-96 object-contain">
+      <!-- Nube estática al lado de la "M" -->
+      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube1.png" alt="Nube 1" class="cloud-1 cloud-size-1">
+      <!-- Segunda nube estática más abajo -->
+      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube2.png" alt="Nube 2" class="cloud-2 cloud-size-2">
+      <!-- Tercera nube estática más abajo -->
+      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube3.png" alt="Nube 3" class="cloud-3 cloud-size-3">
+    </div>
+    <p class="text-lg md:text-xl text-gray-700 mt-[-1rem]">¡Ayuda al Chiqui 👦🏻 a ahorrar sats en su alcancía virtual!</p>
   </header>
 
+  <!-- Sección principal -->
   <section class="flex flex-col items-center text-center">
     <div class="relative w-64 h-64">
       <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/marranito.png" alt="Marranito" class="w-full h-full object-contain">
@@ -95,8 +118,8 @@
       <p class="text-md text-gray-500 mt-2">¡Envía sats y ayuda a llenar su alcancía!</p>
     </div>
 
-    <div class="mt-6 text-lg font-semibold text-orange-500 text-center">
-      <p>Usa la LNAddress: <strong>marranito@pay.abcbbtc.com</strong></p>
+    <div class="mt-6 text-lg text-orange-500 text-center">
+      <p>Usa la LNAddress: marranito@pay.abcbbtc.com</p>
       <p class="mt-2">o escanea el código QR con tu wallet de Lightning Network</p>
     </div>
     <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/qrmarranito.png" alt="Código QR para LNURL" class="mt-4 mx-auto w-64 h-64 object-contain">
@@ -105,7 +128,7 @@
   <section class="mt-12 max-w-2xl text-center">
     <h2 class="text-2xl font-bold text-blue-600">¿Qué es Bitcoin?</h2>
     <p class="text-lg text-gray-700 mt-4">
-      ¡Dinero mágico que vive en internet! Puedes usarlo para comprar cosas, y en el marranito del Chiqui 👦🏻, guardamos pedacitos pequeños llamados <strong>SATS</strong>. ¡Es como juntar monedas para 1₿ tesoro!
+      ¡Dinero mágico que vive en internet! Puedes usarlo para comprar cosas, y en el marranito del Chiqui 👦🏻, guardamos pedacitos pequeños llamados SATS. ¡Es como juntar monedas para 1₿ tesoro!
     </p>
     <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-ninos.png" alt="Bitcoin para niños" class="mt-4 mx-auto w-80 h-40 object-contain rounded-lg">
   </section>
