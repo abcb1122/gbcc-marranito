@@ -72,21 +72,24 @@
     @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
     /* Estilos para las nubes animadas */
     .image-container { position: relative; width: 24rem; height: 24rem; }
-    .cloud-1 { position: absolute; top: 5%; left: -200px; animation: moveCloud 10s linear infinite; animation-delay: 4.5s; }
-    .cloud-2 { position: absolute; top: 20%; left: -200px; animation: moveCloud 12s linear infinite; animation-delay: 0s; }
-    .cloud-3 { position: absolute; top: 35%; left: -200px; animation: moveCloud 14s linear infinite; animation-delay: 9s; }
-    .cloud-4 { position: absolute; top: 50%; left: -200px; animation: moveCloud 16s linear infinite; animation-delay: 1.5s; z-index: 5; }
-    .cloud-5 { position: absolute; top: 65%; left: -200px; animation: moveCloud 18s linear infinite; animation-delay: 6s; }
-    .cloud-6 { position: absolute; top: 80%; left: -200px; animation: moveCloud 20s linear infinite; animation-delay: 3s; }
-    .cloud-7 { position: absolute; top: 12.5%; left: -200px; animation: moveCloud 11s linear infinite; animation-delay: 10.5s; }
-    .cloud-8 { position: absolute; top: 42.5%; left: -200px; animation: moveCloud 15s linear infinite; animation-delay: 7.5s; z-index: 5; }
+    .cloud-1 { position: absolute; top: 5%; left: -300px; animation: moveCloud 10s linear infinite; animation-delay: 4.5s; }
+    .cloud-2 { position: absolute; top: 20%; left: -300px; animation: moveCloud 12s linear infinite; animation-delay: 0s; }
+    .cloud-3 { position: absolute; top: 35%; left: -300px; animation: moveCloud 14s linear infinite; animation-delay: 9s; }
+    .cloud-4 { position: absolute; top: 50%; left: -300px; animation: moveCloud 16s linear infinite; animation-delay: 1.5s; z-index: 5; }
+    .cloud-5 { position: absolute; top: 65%; left: -300px; animation: moveCloud 18s linear infinite; animation-delay: 6s; }
+    .cloud-6 { position: absolute; top: 80%; left: -300px; animation: moveCloud 20s linear infinite; animation-delay: 3s; }
+    .cloud-7 { position: absolute; top: 12.5%; left: -300px; animation: moveCloud 11s linear infinite; animation-delay: 10.5s; }
+    .cloud-8 { position: absolute; top: 42.5%; left: -300px; animation: moveCloud 15s linear infinite; animation-delay: 7.5s; z-index: 5; }
     .cloud-size-1 { width: 4rem; height: 2rem; }
     .cloud-size-2 { width: 5rem; height: 2.5rem; }
     .cloud-size-3 { width: 3rem; height: 1.5rem; }
+    .cloud-hidden { opacity: 0; }
     .z-10 { z-index: 10; }
     @keyframes moveCloud {
-      0% { left: -200px; } /* Comienza fuera de la pantalla por la izquierda */
-      100% { left: calc(100vw + 200px); } /* Termina fuera de la pantalla por la derecha */
+      0% { left: -300px; opacity: 0; }
+      10% { opacity: 1; } /* Aumenta la opacidad mientras se mueve */
+      90% { opacity: 1; } /* Mantiene la opacidad alta durante la mayor parte del recorrido */
+      100% { left: calc(100% + 300px); opacity: 0; } /* Desaparece al salir */
     }
     /* Animaciones para los rayos con diferentes tiempos de pausa */
     .flash-4s { animation: flash-4s 6s ease-in-out infinite; }
@@ -180,21 +183,21 @@
       <!-- Imagen principal del marranito -->
       <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/marranitoinicio.png" alt="Marranito Inicio" class="w-96 h-96 object-contain z-10">
       <!-- Nube 1 -->
-      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube1.png" alt="Nube 1" class="cloud-1 cloud-size-1">
+      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube1.png" alt="Nube 1" class="cloud-1 cloud-size-1 cloud-hidden">
       <!-- Nube 2 -->
-      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube2.png" alt="Nube 2" class="cloud-2 cloud-size-2">
+      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube2.png" alt="Nube 2" class="cloud-2 cloud-size-2 cloud-hidden">
       <!-- Nube 3 -->
-      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube3.png" alt="Nube 3" class="cloud-3 cloud-size-3">
+      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube3.png" alt="Nube 3" class="cloud-3 cloud-size-3 cloud-hidden">
       <!-- Nube 4 -->
-      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube1.png" alt="Nube 4" class="cloud-4 cloud-size-1">
+      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube1.png" alt="Nube 4" class="cloud-4 cloud-size-1 cloud-hidden">
       <!-- Nube 5 -->
-      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube2.png" alt="Nube 5" class="cloud-5 cloud-size-2">
+      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube2.png" alt="Nube 5" class="cloud-5 cloud-size-2 cloud-hidden">
       <!-- Nube 6 -->
-      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube3.png" alt="Nube 6" class="cloud-6 cloud-size-3">
+      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube3.png" alt="Nube 6" class="cloud-6 cloud-size-3 cloud-hidden">
       <!-- Nube 7 -->
-      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube3.png" alt="Nube 7" class="cloud-7 cloud-size-3">
+      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube3.png" alt="Nube 7" class="cloud-7 cloud-size-3 cloud-hidden">
       <!-- Nube 8 -->
-      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube1.png" alt="Nube 8" class="cloud-8 cloud-size-1">
+      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube1.png" alt="Nube 8" class="cloud-8 cloud-size-1 cloud-hidden">
     </div>
     <p class="text-lg md:text-xl text-gray-700 mt-[-1rem]">¡Ayuda al Chiqui 👦🏻 a ahorrar SATS en su alcancía virtual!</p>
   </header>
