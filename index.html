@@ -88,8 +88,12 @@
       0% { left: -200px; }
       100% { left: calc(100% + 200px); }
     }
-    /* Animación para el rayo con 3 alternancias y pausa */
-    .animate-flash { animation: flash 8s ease-in-out infinite; }
+    /* Animaciones para los rayos con diferentes tiempos de pausa */
+    .flash-4s { animation: flash-4s 6s ease-in-out infinite; }
+    .flash-5s { animation: flash-5s 7s ease-in-out infinite; }
+    .flash-6s { animation: flash-6s 8s ease-in-out infinite; }
+    .flash-7s { animation: flash-7s 9s ease-in-out infinite; }
+    .flash-8s { animation: flash-8s 10s ease-in-out infinite; }
     .flash-delay-0 { animation-delay: 0s; }
     .flash-delay-1 { animation-delay: 0.5s; }
     .flash-delay-2 { animation-delay: 1s; }
@@ -100,31 +104,69 @@
     .flash-delay-7 { animation-delay: 3.5s; }
     .flash-delay-8 { animation-delay: 4s; }
     .flash-delay-9 { animation-delay: 4.5s; }
-    @keyframes flash {
-      0%, 2% { opacity: 1; } /* Primera alternancia rápida */
-      1%, 3% { opacity: 0; }
-      4%, 6% { opacity: 1; } /* Segunda alternancia más lenta */
-      5%, 7% { opacity: 0; }
-      8%, 11% { opacity: 1; } /* Tercera alternancia aún más lenta */
-      9%, 12% { opacity: 0; }
-      13%, 100% { opacity: 0; } /* Desaparece durante 6 segundos */
+    .flash-delay-10 { animation-delay: 5s; }
+    .flash-delay-11 { animation-delay: 5.5s; }
+    @keyframes flash-4s {
+      0% { opacity: 0; } /* No aparece al cargar la página */
+      5%, 10% { opacity: 1; } /* Primera alternancia rápida */
+      7.5%, 12.5% { opacity: 0; }
+      15%, 20% { opacity: 1; } /* Segunda alternancia más lenta */
+      17.5%, 22.5% { opacity: 0; }
+      25%, 33.33% { opacity: 1; } /* Tercera alternancia aún más lenta */
+      27.5%, 35.83% { opacity: 0; }
+      36.83%, 100% { opacity: 0; } /* Desaparece durante 4 segundos */
     }
-    /* Posiciones distribuidas para los rayos */
-    .rayo-pos-1 { top: 5%; left: 5%; }
-    .rayo-pos-2 { top: 5%; right: 5%; }
-    .rayo-pos-3 { top: 15%; left: 20%; }
-    .rayo-pos-4 { top: 15%; right: 15%; }
-    .rayo-pos-5 { top: 25%; left: 35%; }
-    .rayo-pos-6 { top: 30%; right: 25%; }
-    .rayo-pos-7 { top: 40%; left: 10%; }
-    .rayo-pos-8 { top: 50%; right: 10%; }
-    .rayo-pos-9 { top: 60%; left: 25%; }
-    .rayo-pos-10 { top: 65%; right: 30%; }
-    .rayo-pos-11 { top: 75%; left: 15%; }
-    .rayo-pos-12 { top: 80%; right: 20%; }
-    .rayo-pos-13 { top: 85%; left: 30%; }
-    .rayo-pos-14 { top: 90%; right: 5%; }
-    .rayo-pos-15 { top: 95%; left: 5%; }
+    @keyframes flash-5s {
+      0% { opacity: 0; }
+      5%, 10% { opacity: 1; }
+      7.5%, 12.5% { opacity: 0; }
+      15%, 20% { opacity: 1; }
+      17.5%, 22.5% { opacity: 0; }
+      25%, 33.33% { opacity: 1; }
+      27.5%, 35.83% { opacity: 0; }
+      36.83%, 100% { opacity: 0; } /* Desaparece durante 5 segundos */
+    }
+    @keyframes flash-6s {
+      0% { opacity: 0; }
+      5%, 10% { opacity: 1; }
+      7.5%, 12.5% { opacity: 0; }
+      15%, 20% { opacity: 1; }
+      17.5%, 22.5% { opacity: 0; }
+      25%, 33.33% { opacity: 1; }
+      27.5%, 35.83% { opacity: 0; }
+      36.83%, 100% { opacity: 0; } /* Desaparece durante 6 segundos */
+    }
+    @keyframes flash-7s {
+      0% { opacity: 0; }
+      5%, 10% { opacity: 1; }
+      7.5%, 12.5% { opacity: 0; }
+      15%, 20% { opacity: 1; }
+      17.5%, 22.5% { opacity: 0; }
+      25%, 33.33% { opacity: 1; }
+      27.5%, 35.83% { opacity: 0; }
+      36.83%, 100% { opacity: 0; } /* Desaparece durante 7 segundos */
+    }
+    @keyframes flash-8s {
+      0% { opacity: 0; }
+      5%, 10% { opacity: 1; }
+      7.5%, 12.5% { opacity: 0; }
+      15%, 20% { opacity: 1; }
+      17.5%, 22.5% { opacity: 0; }
+      25%, 33.33% { opacity: 1; }
+      27.5%, 35.83% { opacity: 0; }
+      36.83%, 100% { opacity: 0; } /* Desaparece durante 8 segundos */
+    }
+    /* Posiciones para los rayos basadas en la cuadrícula */
+    .rayo-B9 { top: 85%; left: 15%; } /* B9: Columna B (10%-20%), Fila 9 (80%-90%) */
+    .rayo-I7 { top: 65%; right: 15%; } /* I7: Columna I (80%-90%), Fila 7 (60%-70%) */
+    .rayo-A6 { top: 55%; left: 5%; } /* A6: Columna A (0%-10%), Fila 6 (50%-60%) */
+    .rayo-I1 { top: 5%; right: 15%; } /* I1: Columna I (80%-90%), Fila 1 (0%-10%) */
+    .rayo-G3 { top: 25%; right: 35%; } /* G3: Columna G (60%-70%), Fila 3 (20%-30%) */
+    .rayo-B2 { top: 15%; left: 15%; } /* B2: Columna B (10%-20%), Fila 2 (10%-20%) */
+    .rayo-E1 { top: 5%; left: 45%; } /* E1: Columna E (40%-50%), Fila 1 (0%-10%) */
+    .rayo-D5 { top: 45%; left: 35%; } /* D5: Columna D (30%-40%), Fila 5 (40%-50%) */
+    .rayo-A7 { top: 65%; left: 5%; } /* A7: Columna A (0%-10%), Fila 7 (60%-70%) */
+    .rayo-J10 { top: 95%; right: 5%; } /* J10: Columna J (90%-100%), Fila 10 (90%-100%) */
     @media (min-width: 768px) {
       .md\:text-5xl { font-size: 3rem; line-height: 1; }
       .md\:text-xl { font-size: 1.25rem; line-height: 1.75rem; }
@@ -154,7 +196,7 @@
       <!-- Nube 8 -->
       <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube1.png" alt="Nube 8" class="cloud-8 cloud-size-1">
     </div>
-    <p class="text-lg md:text-xl text-gray-700 mt-[-1rem]">¡Ayuda al Chiqui 👦🏻 a ahorrar sats en su alcancía virtual!</p>
+    <p class="text-lg md:text-xl text-gray-700 mt-[-1rem]">¡Ayuda al Chiqui 👦🏻 a ahorrar SATS en su alcancía virtual!</p>
   </header>
 
   <!-- Sección principal -->
@@ -164,18 +206,18 @@
       <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-0 left-0 w-8 h-8 object-contain animate-float" alt="BTC">
       <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-0 right-0 w-8 h-8 object-contain animate-float-delay-1" alt="BTC">
       <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-1/2 left-0 w-8 h-8 object-contain animate-float-delay-2" alt="BTC">
-      <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute top-1/2 right-0 w-8 h-8 object-contain animate-float-delay-3" alt="BTC">
-      <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" class="absolute bottom-0 left-1/2 w-8 h-8 object-contain animate-float-delay-4" alt="BTC">
+      <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" alt="BTC" class="absolute top-1/2 right-0 w-8 h-8 object-contain animate-float-delay-3">
+      <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/bitcoin-icon.png" alt="BTC" class="absolute bottom-0 left-1/2 w-8 h-8 object-contain animate-float-delay-4">
     </div>
 
     <div class="text-center mt-4">
       <p id="balance" class="text-2xl font-semibold text-gray-800 font-sniglet">Cargando saldo...</p>
       <p id="cop-balance" class="text-lg text-gray-600 font-sniglet">Cargando conversión...</p>
-      <p class="text-md text-gray-500 mt-2">¡Envía sats y ayuda a llenar el marranito!</p>
+      <p class="text-md text-gray-500 mt-2">¡Envía SATS por Lightning Network y ayuda a llenar el marranito!</p>
     </div>
 
     <div class="mt-6 text-lg text-orange-500 text-center font-sniglet">
-      <p><img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo" class="inline-block w-8 h-8 object-contain animate-flash flash-delay-0"> Usa la LNAddress: marranito@pay.abcbbtc.com</p>
+      <p><img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo" class="inline-block w-8 h-8 object-contain flash-8s flash-delay-11"> Usa la LNAddress: marranito@pay.abcbbtc.com</p>
       <p class="mt-2">o escanea el código QR con tu wallet de Lightning Network</p>
     </div>
     <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/qrmarranito.png" alt="Código QR para LNURL" class="mt-4 mx-auto w-64 h-64 object-contain">
@@ -198,15 +240,17 @@
     <p class="text-sm mt-2">marranito.abcbbtc.com</p>
   </footer>
 
-  <!-- Rayos adicionales en ubicaciones aleatorias -->
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo 1" class="absolute rayo-pos-2 w-8 h-8 object-contain animate-flash flash-delay-1">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo 2" class="absolute rayo-pos-4 w-8 h-8 object-contain animate-flash flash-delay-2">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo 3" class="absolute rayo-pos-6 w-8 h-8 object-contain animate-flash flash-delay-3">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo 4" class="absolute rayo-pos-8 w-8 h-8 object-contain animate-flash flash-delay-4">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo 5" class="absolute rayo-pos-10 w-8 h-8 object-contain animate-flash flash-delay-5">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo 6" class="absolute rayo-pos-12 w-8 h-8 object-contain animate-flash flash-delay-6">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo 7" class="absolute rayo-pos-14 w-8 h-8 object-contain animate-flash flash-delay-7">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo 8" class="absolute rayo-pos-15 w-8 h-8 object-contain animate-flash flash-delay-8">
+  <!-- Rayos en las posiciones indicadas -->
+  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo B9" class="absolute rayo-B9 w-8 h-8 object-contain flash-4s flash-delay-0">
+  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo I7" class="absolute rayo-I7 w-8 h-8 object-contain flash-5s flash-delay-1">
+  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo A6" class="absolute rayo-A6 w-8 h-8 object-contain flash-6s flash-delay-2">
+  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo I1" class="absolute rayo-I1 w-8 h-8 object-contain flash-7s flash-delay-3">
+  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo G3" class="absolute rayo-G3 w-8 h-8 object-contain flash-8s flash-delay-4">
+  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo B2" class="absolute rayo-B2 w-8 h-8 object-contain flash-4s flash-delay-5">
+  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo E1" class="absolute rayo-E1 w-8 h-8 object-contain flash-5s flash-delay-6">
+  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo D5" class="absolute rayo-D5 w-8 h-8 object-contain flash-6s flash-delay-7">
+  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo A7" class="absolute rayo-A7 w-8 h-8 object-contain flash-7s flash-delay-8">
+  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo J10" class="absolute rayo-J10 w-8 h-8 object-contain flash-8s flash-delay-9">
 
   <script>
     function formatSats(sats) {
@@ -225,7 +269,7 @@
         console.log('Datos del worker:', data);
         const balanceSats = data.balance;
 
-        document.getElementById('balance').innerHTML = `₿ ${formatSats(balanceSats)} SATS ahorrados<img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo" class="inline-block w-8 h-8 object-contain animate-flash flash-delay-9">`;
+        document.getElementById('balance').innerHTML = `₿ ${formatSats(balanceSats)} SATS ahorrados <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo" class="inline-block w-8 h-8 object-contain flash-4s flash-delay-10">`;
 
         const coingecko = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=cop');
         const priceData = await coingecko.json();
