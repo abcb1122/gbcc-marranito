@@ -159,17 +159,18 @@
       27.5%, 35.83% { opacity: 0; }
       36.83%, 100% { opacity: 0; } /* Desaparece durante 8 segundos */
     }
-    /* Posiciones para los rayos basadas en la cuadrícula */
-    .rayo-B9 { top: 85%; left: 15%; } /* B9: Columna B (10%-20%), Fila 9 (80%-90%) */
-    .rayo-I7 { top: 65%; right: 15%; } /* I7: Columna I (80%-90%), Fila 7 (60%-70%) */
-    .rayo-A6 { top: 55%; left: 5%; } /* A6: Columna A (0%-10%), Fila 6 (50%-60%) */
-    .rayo-I1 { top: 5%; right: 15%; } /* I1: Columna I (80%-90%), Fila 1 (0%-10%) */
-    .rayo-G3 { top: 25%; right: 35%; } /* G3: Columna G (60%-70%), Fila 3 (20%-30%) */
-    .rayo-B2 { top: 15%; left: 15%; } /* B2: Columna B (10%-20%), Fila 2 (10%-20%) */
-    .rayo-E1 { top: 5%; left: 45%; } /* E1: Columna E (40%-50%), Fila 1 (0%-10%) */
-    .rayo-D5 { top: 45%; left: 35%; } /* D5: Columna D (30%-40%), Fila 5 (40%-50%) */
-    .rayo-A7 { top: 65%; left: 5%; } /* A7: Columna A (0%-10%), Fila 7 (60%-70%) */
-    .rayo-J10 { top: 95%; right: 5%; } /* J10: Columna J (90%-100%), Fila 10 (90%-100%) */
+    /* Estilos para los rayos en el footer */
+    .rayos-container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .rayo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     @media (min-width: 768px) {
       .md\:text-5xl { font-size: 3rem; line-height: 1; }
       .md\:text-xl { font-size: 1.25rem; line-height: 1.75rem; }
@@ -179,7 +180,7 @@
 <body class="bg-gradient-to-b from-blue-100 to-pink-100 min-h-screen flex flex-col items-center justify-center font-fredoka px-6">
   <!-- Header -->
   <header class="text-center py-4">
-    <div class="image-container mx-auto">
+    <div class="image-container mx-auto relative">
       <!-- Imagen principal del marranito -->
       <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/marranitoinicio.png" alt="Marranito Inicio" class="w-96 h-96 object-contain z-10">
       <!-- Nube 1 -->
@@ -198,6 +199,8 @@
       <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube3.png" alt="Nube 7" class="cloud-7 cloud-size-3 cloud-hidden">
       <!-- Nube 8 -->
       <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/nube1.png" alt="Nube 8" class="cloud-8 cloud-size-1 cloud-hidden">
+      <!-- Rayo 1 sobre la imagen marranitoinicio -->
+      <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo 1" class="absolute w-8 h-8 object-contain top-[-40px] left-1/2 flash-4s flash-delay-0">
     </div>
     <p class="text-lg md:text-xl text-gray-700 mt-[-1rem]">¡Ayuda al Chiqui 👦🏻 a ahorrar SATS en su alcancía virtual!</p>
   </header>
@@ -220,7 +223,7 @@
     </div>
 
     <div class="mt-6 text-lg text-orange-500 text-center font-sniglet">
-      <p><img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo" class="inline-block w-8 h-8 object-contain flash-8s flash-delay-11"> Usa la LNAddress: marranito@pay.abcbbtc.com</p>
+      <p> Usa la LNAddress: marranito@pay.abcbbtc.com</p>
       <p class="mt-2">o escanea el código QR con tu wallet de Lightning Network</p>
     </div>
     <img src="https://raw.githubusercontent.com/abcb1122/gbcc-marranito/main/assets/images/qrmarranito.png" alt="Código QR para LNURL" class="mt-4 mx-auto w-64 h-64 object-contain">
@@ -241,19 +244,53 @@
     <p>Creado con ❤️ por papá y Satoshi Nakamoto</p>
     <p>🐖</p>
     <p class="text-sm mt-2">marranito.abcbbtc.com</p>
+    <div class="rayos-container">
+      <div class="rayo-item">
+        <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo 2" class="w-8 h-8 object-contain flash-5s flash-delay-1">
+        <span>2</span>
+      </div>
+      <div class="rayo-item">
+        <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo 3" class="w-8 h-8 object-contain flash-6s flash-delay-2">
+        <span>3</span>
+      </div>
+      <div class="rayo-item">
+        <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo 4" class="w-8 h-8 object-contain flash-7s flash-delay-3">
+        <span>4</span>
+      </div>
+      <div class="rayo-item">
+        <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo 5" class="w-8 h-8 object-contain flash-8s flash-delay-4">
+        <span>5</span>
+      </div>
+      <div class="rayo-item">
+        <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo 6" class="w-8 h-8 object-contain flash-4s flash-delay-5">
+        <span>6</span>
+      </div>
+      <div class="rayo-item">
+        <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo 7" class="w-8 h-8 object-contain flash-5s flash-delay-6">
+        <span>7</span>
+      </div>
+      <div class="rayo-item">
+        <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo 8" class="w-8 h-8 object-contain flash-6s flash-delay-7">
+        <span>8</span>
+      </div>
+      <div class="rayo-item">
+        <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo 9" class="w-8 h-8 object-contain flash-7s flash-delay-8">
+        <span>9</span>
+      </div>
+      <div class="rayo-item">
+        <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo 10" class="w-8 h-8 object-contain flash-8s flash-delay-9">
+        <span>10</span>
+      </div>
+      <div class="rayo-item">
+        <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo 11" class="w-8 h-8 object-contain flash-4s flash-delay-10">
+        <span>11</span>
+      </div>
+      <div class="rayo-item">
+        <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo 12" class="w-8 h-8 object-contain flash-8s flash-delay-11">
+        <span>12</span>
+      </div>
+    </div>
   </footer>
-
-  <!-- Rayos en las posiciones indicadas -->
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo B9" class="absolute rayo-B9 w-8 h-8 object-contain flash-4s flash-delay-0">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo I7" class="absolute rayo-I7 w-8 h-8 object-contain flash-5s flash-delay-1">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo A6" class="absolute rayo-A6 w-8 h-8 object-contain flash-6s flash-delay-2">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo I1" class="absolute rayo-I1 w-8 h-8 object-contain flash-7s flash-delay-3">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo G3" class="absolute rayo-G3 w-8 h-8 object-contain flash-8s flash-delay-4">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo B2" class="absolute rayo-B2 w-8 h-8 object-contain flash-4s flash-delay-5">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo E1" class="absolute rayo-E1 w-8 h-8 object-contain flash-5s flash-delay-6">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo D5" class="absolute rayo-D5 w-8 h-8 object-contain flash-6s flash-delay-7">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo A7" class="absolute rayo-A7 w-8 h-8 object-contain flash-7s flash-delay-8">
-  <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo2.png" alt="Rayo J10" class="absolute rayo-J10 w-8 h-8 object-contain flash-8s flash-delay-9">
 
   <script>
     function formatSats(sats) {
@@ -272,7 +309,7 @@
         console.log('Datos del worker:', data);
         const balanceSats = data.balance;
 
-        document.getElementById('balance').innerHTML = `₿ ${formatSats(balanceSats)} SATS ahorrados <img src="https://raw.githubusercontent.com/abcb1122/marranitovirtual/main/assets/images/rayo1.png" alt="Rayo" class="inline-block w-8 h-8 object-contain flash-4s flash-delay-10">`;
+        document.getElementById('balance').innerHTML = `₿ ${formatSats(balanceSats)} SATS ahorrados`;
 
         const coingecko = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=cop');
         const priceData = await coingecko.json();
