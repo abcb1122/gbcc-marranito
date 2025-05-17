@@ -85,8 +85,8 @@
     .cloud-size-3 { width: 3rem; height: 1.5rem; }
     .z-10 { z-index: 10; }
     @keyframes moveCloud {
-      0% { left: -200px; }
-      100% { left: calc(100% + 200px); }
+      0% { left: -200px; } /* Comienza fuera de la pantalla por la izquierda */
+      100% { left: calc(100vw + 200px); } /* Termina fuera de la pantalla por la derecha */
     }
     /* Animaciones para los rayos con diferentes tiempos de pausa */
     .flash-4s { animation: flash-4s 6s ease-in-out infinite; }
